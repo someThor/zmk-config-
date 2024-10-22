@@ -23,18 +23,6 @@
         };
     };
 
-    behaviors {
-        RS_Enter: RS_Enter {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RS_ENTER";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <49>;
-            tapping-term-ms = <125>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -58,7 +46,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOL_DN>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         mac_layer {
@@ -73,7 +61,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp UP_ARROW DOWN>;
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         lower_layer {
@@ -97,7 +85,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&inc_dec_kp PG_UP PG_DN>;
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         raise_layer {
@@ -118,7 +106,9 @@
                     &trans     &trans      &trans       &trans    &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         adjust_layer {
